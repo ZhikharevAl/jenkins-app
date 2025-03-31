@@ -14,6 +14,7 @@ pipeline {
                 sh """
                     set -e
                     rm -rf node_modules
+                    npm config set cache /var/lib/jenkins/workspace/jenkins-app/npm-cache --global
                     npm cache clean --force
                     ls -la
                     node --version
